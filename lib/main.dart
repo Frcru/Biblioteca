@@ -1,7 +1,12 @@
 import 'package:biblioteca/application/use_case/frm_biblioteca.dart';
+import 'package:biblioteca/controladores/conexion.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
