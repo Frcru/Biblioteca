@@ -39,7 +39,7 @@ class _frmListadoUsuariosState extends State<frmListadoUsuarios> {
                       ),
                       IconButton(
                           onPressed: () {
-                            cn.deleteE(snapshot.data[index]['id']);
+                            cn.deleteE(snapshot.data[index]['codigo']);
                             setState(() {});
                           },
                           icon: const Icon(Icons.delete))
