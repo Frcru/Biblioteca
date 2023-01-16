@@ -21,70 +21,72 @@ class _frmArriendoLibroState extends State<frmArriendoLibro> {
             'Arriendo de Libros',
             style: TextStyle(color: Colors.black, fontSize: 25),
           )),
-      body: Form(
-        key: _formKey,
-        child: GestureDetector(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    TextFormField(
-                      controller: _fecha,
-                      decoration: InputDecoration(
-                          labelText: 'Establecer fecha de entrega'),
-                      onTap: () async {
-                        final date = await showDatePicker(
-                          context: context,
-                          initialDate: _date ?? DateTime.now(),
-                          firstDate: DateTime(1900),
-                          lastDate: DateTime(2100),
-                        );
-                        if (date != null) {
-                          setState(() {
-                            _date = date;
-                          });
-                          _fecha.text = DateFormat.yMMMd().format(date);
-                        }
-                      },
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please select a date';
-                        }
-                        return null;
-                      },
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.red),
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {}
-                            },
-                            child: Text('Confirmar'),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.red),
-                            onPressed: () async {
-                              if (_formKey.currentState!.validate()) {}
-                            },
-                            child: Text('Actualizar'),
-                          ),
-                        ],
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: GestureDetector(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      TextFormField(
+                        controller: _fecha,
+                        decoration: InputDecoration(
+                            labelText: 'Establecer fecha de entrega'),
+                        onTap: () async {
+                          final date = await showDatePicker(
+                            context: context,
+                            initialDate: _date ?? DateTime.now(),
+                            firstDate: DateTime(1900),
+                            lastDate: DateTime(2100),
+                          );
+                          if (date != null) {
+                            setState(() {
+                              _date = date;
+                            });
+                            _fecha.text = DateFormat.yMMMd().format(date);
+                          }
+                        },
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Please select a date';
+                          }
+                          return null;
+                        },
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red),
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {}
+                              },
+                              child: Text('Confirmar'),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red),
+                              onPressed: () async {
+                                if (_formKey.currentState!.validate()) {}
+                              },
+                              child: Text('Actualizar'),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

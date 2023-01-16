@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:biblioteca/application/use_case/frm_ArriendoLibro.dart';
+import 'package:biblioteca/application/use_case/frm_MtoAutor.dart';
 import 'package:biblioteca/application/use_case/frm_MtoLector.dart';
 import 'package:biblioteca/application/use_case/frm_MtoLibros.dart';
 import 'package:biblioteca/application/use_case/frm_MtoUsuario.dart';
@@ -180,6 +181,25 @@ class _frmListadoLibrosState extends State<frmListadoLibros> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => frmMtoUsuario(),
+                      ));
+                },
+              ),
+              ListTile(
+                title: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Text('Mto. Autor'),
+                      Spacer(),
+                      Icon(Icons.supervised_user_circle_rounded)
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => frmMtoAutor(),
                       ));
                 },
               ),

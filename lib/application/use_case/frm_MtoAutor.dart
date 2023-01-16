@@ -1,26 +1,17 @@
 import 'package:flutter/material.dart';
 
-class frmNuevoUsuario extends StatefulWidget {
+class frmMtoAutor extends StatefulWidget {
   @override
-  State<frmNuevoUsuario> createState() => _frmNuevoUsuarioState();
+  State<frmMtoAutor> createState() => _frmMtoAutorState();
 }
 
-class _frmNuevoUsuarioState extends State<frmNuevoUsuario> {
+class _frmMtoAutorState extends State<frmMtoAutor> {
   final _formKey = GlobalKey<FormState>();
 
-  final _cantidadController = TextEditingController();
-
-  final _descripcionController = TextEditingController();
-
-  final _imagenController = TextEditingController();
-
-  final _nombreController = TextEditingController();
-
-  final _precioController = TextEditingController();
-
-  final _stockController = TextEditingController();
-
-  final _pesoController = TextEditingController();
+  final _codigo = TextEditingController();
+  final _nombres = TextEditingController();
+  final _apellidos = TextEditingController();
+  final _nacionalidad = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +19,7 @@ class _frmNuevoUsuarioState extends State<frmNuevoUsuario> {
       appBar: AppBar(
         leading: BackButton(color: Colors.black),
         title: Text(
-          'Mto Producto',
+          'Mto Lector',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -44,43 +35,10 @@ class _frmNuevoUsuarioState extends State<frmNuevoUsuario> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 250,
-                            child: TextFormField(
-                              decoration: InputDecoration(labelText: 'Nombre'),
-                              controller: _nombreController,
-                              maxLength: 50,
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Por favor ingresar datos';
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                          Spacer(),
-                          // IconButton(
-                          //     tooltip: 'Buscar',
-                          //     onPressed: () {},
-                          //     icon: Icon(Icons.search)),
-                          Spacer(),
-                          // IconButton(
-                          //     tooltip: 'Limpiar campos',
-                          //     onPressed: () {
-                          //       _nombreController.text = '';
-                          //       _descripcionController.text = '';
-                          //       _imagenController.text = '';
-                          //       _stockController.text = '';
-                          //       _precioController.text = '';
-                          //     },
-                          //     icon: Icon(Icons.border_clear))
-                        ],
-                      ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Descripción'),
-                        controller: _descripcionController,
+                        decoration:
+                            InputDecoration(labelText: 'Codigo de Autor'),
+                        controller: _codigo,
                         maxLength: 50,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -90,8 +48,8 @@ class _frmNuevoUsuarioState extends State<frmNuevoUsuario> {
                         },
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Imagen'),
-                        controller: _imagenController,
+                        decoration: InputDecoration(labelText: 'Nombres'),
+                        controller: _nombres,
                         maxLength: 150,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -101,8 +59,8 @@ class _frmNuevoUsuarioState extends State<frmNuevoUsuario> {
                         },
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Precio'),
-                        controller: _precioController,
+                        decoration: InputDecoration(labelText: 'Apellidos'),
+                        controller: _apellidos,
                         keyboardType: TextInputType.number,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -112,19 +70,8 @@ class _frmNuevoUsuarioState extends State<frmNuevoUsuario> {
                         },
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Stock'),
-                        controller: _stockController,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Peso'),
-                        controller: _pesoController,
+                        decoration: InputDecoration(labelText: 'Nacionalidad'),
+                        controller: _nacionalidad,
                         keyboardType: TextInputType.number,
                         validator: (value) {
                           if (value!.isEmpty) {
