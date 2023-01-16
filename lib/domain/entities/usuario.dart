@@ -1,33 +1,33 @@
 class usuario {
-  String _codigo = '', _cod_tipo = '', _logueo = '', _clave = '';
-  usuario(String cod, String ct, String log, String cla) {
+  String _codigo = '', _cod_tipo = '', _login = '', _password = '';
+  usuario(String cod, String ct, String log, String pass) {
     _codigo = cod;
     _cod_tipo = ct;
-    _logueo = log;
-    _clave = cla;
+    _login = log;
+    _password = pass;
   }
 
-  String get Codigo => _codigo;
+  String get codigo => _codigo;
 
-  set Codigo(String str) {
+  set codigo(String str) {
     _codigo = str;
   }
 
-  String get Codigo_tipo => _cod_tipo;
+  String get codigo_tipo => _cod_tipo;
 
-  set Codigo_tipo(String str) {
+  set codigo_tipo(String str) {
     _cod_tipo = str;
   }
 
-  String get Logueo => _logueo;
+  String get login => _login;
 
-  set Logueo(String str) {
-    _logueo = str;
+  set login(String str) {
+    _login = str;
   }
 
-  String get Clave => _clave;
+  String get password => _password;
 
-  set Clave(String str) {
-    _clave = str;
+  set password(String str) {
+    _password = str;
   }
 }

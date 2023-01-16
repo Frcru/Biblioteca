@@ -6,15 +6,15 @@ class tipo_usuario {
     _nombre = nom;
   }
 
-  String get Codigo => _codigo;
+  String get codigo => _codigo;
 
-  set Codigo(String str) {
+  set codigo(String str) {
     _codigo = str;
   }
 
-  String get Nombre => _nombre;
+  String get nombre => _nombre;
 
-  set Nombre(String str) {
+  set nombre(String str) {
     _nombre = str;
   }
 }
