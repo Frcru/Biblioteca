@@ -18,144 +18,139 @@ class _frmMtoLectorState extends State<frmMtoLector> {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: ThemeData.light(),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          leading: BackButton(color: Colors.black),
-          title: Text(
-            'Mto Lector',
-            style: TextStyle(color: Colors.black),
-          ),
-          backgroundColor: Colors.white,
+    return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(color: Colors.black),
+        title: Text(
+          'Mto Lector',
+          style: TextStyle(color: Colors.black),
         ),
-        body: Form(
-          key: _formKey,
-          child: GestureDetector(
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 250,
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                  labelText: 'Codigo de Lector'),
-                              controller: _codigo,
-                              maxLength: 50,
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Por favor ingresar datos';
-                                }
-                                return null;
-                              },
-                            ),
+      ),
+      body: Form(
+        key: _formKey,
+        child: GestureDetector(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 250,
+                          child: TextFormField(
+                            decoration:
+                                InputDecoration(labelText: 'Codigo de Lector'),
+                            controller: _codigo,
+                            maxLength: 50,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Por favor ingresar datos';
+                              }
+                              return null;
+                            },
                           ),
-                        ],
-                      ),
-                      TextFormField(
-                        decoration:
-                            InputDecoration(labelText: 'Codigo de usuario'),
-                        controller: _codigousuario,
-                        maxLength: 50,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration:
-                            InputDecoration(labelText: 'Distrito residencia'),
-                        controller: _coddistrito,
-                        maxLength: 150,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Nombres'),
-                        controller: _nombres,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Apellidos'),
-                        controller: _apellidos,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'DNI'),
-                        controller: _dni,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Estado'),
-                        controller: _estado,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.red),
-                                onPressed: () {
-                                  if (_formKey.currentState!.validate()) {}
-                                },
-                                child: Text('Confirmar'),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.red),
-                                onPressed: () async {
-                                  if (_formKey.currentState!.validate()) {}
-                                },
-                                child: Text('Actualizar'),
-                              ),
-                            ],
-                          )),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                    TextFormField(
+                      decoration:
+                          InputDecoration(labelText: 'Codigo de usuario'),
+                      controller: _codigousuario,
+                      maxLength: 50,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor ingresar datos';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration:
+                          InputDecoration(labelText: 'Distrito residencia'),
+                      controller: _coddistrito,
+                      maxLength: 150,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor ingresar datos';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(labelText: 'Nombres'),
+                      controller: _nombres,
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor ingresar datos';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(labelText: 'Apellidos'),
+                      controller: _apellidos,
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor ingresar datos';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(labelText: 'DNI'),
+                      controller: _dni,
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor ingresar datos';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(labelText: 'Estado'),
+                      controller: _estado,
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Por favor ingresar datos';
+                        }
+                        return null;
+                      },
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red),
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {}
+                              },
+                              child: Text('Confirmar'),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red),
+                              onPressed: () async {
+                                if (_formKey.currentState!.validate()) {}
+                              },
+                              child: Text('Actualizar'),
+                            ),
+                          ],
+                        )),
+                  ],
                 ),
               ),
             ),

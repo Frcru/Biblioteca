@@ -7,32 +7,28 @@ class frmPerfil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: ThemeData.light(),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          leading: BackButton(color: Colors.black),
-          title: Text(
-            'Mto Producto',
-            style: TextStyle(color: Colors.black),
+    return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(color: Colors.black),
+        title: Text(
+          'Mto Producto',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          CircleAvatar(
+            backgroundColor: Colors.black,
+            foregroundImage: NetworkImage(
+                'https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?w=2000'),
           ),
-          backgroundColor: Colors.white,
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            CircleAvatar(
-              child: Image.network(
-                  'https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?w=2000'),
-            ),
-            Text('Nombre: ${user.nombre}'),
-            Text('Apellido: ${user.apellido}'),
-            Text('Estado: ${user.estado}'),
-            Text('Fecha Creacion: ${user.fechaCreacion}'),
-            Text('Distrito: ${user.distrito}'),
-          ],
-        ),
+          Text('Nombre: ${user.nombre}'),
+          Text('Apellido: ${user.apellido}'),
+          Text('Estado: ${user.estado}'),
+          Text('Fecha Creacion: ${user.fechaCreacion}'),
+          Text('Distrito: ${user.distrito}'),
+        ],
       ),
     );
   }
