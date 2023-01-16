@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
-  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+  await Supabase.initialize(
+      url: SupabaseCredentials.APIURL, anonKey: SupabaseCredentials.APIKEY);
   runApp(MyApp());
 }
 
