@@ -25,7 +25,7 @@ class _frmMtoLectorState extends State<frmMtoLector> {
         appBar: AppBar(
           leading: BackButton(color: Colors.black),
           title: Text(
-            'Mto Producto',
+            'Mto Lector',
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,

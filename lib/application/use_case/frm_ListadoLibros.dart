@@ -4,6 +4,7 @@ import 'package:biblioteca/application/use_case/frm_ArriendoLibro.dart';
 import 'package:biblioteca/application/use_case/frm_MtoLector.dart';
 import 'package:biblioteca/application/use_case/frm_MtoLibros.dart';
 import 'package:biblioteca/application/use_case/frm_MtoUsuario.dart';
+import 'package:biblioteca/application/use_case/frm_Perfil.dart';
 import 'package:biblioteca/application/widgets/data.dart';
 import 'package:flutter/material.dart';
 
@@ -56,7 +57,18 @@ class _frmListadoLibrosState extends State<frmListadoLibros> {
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: CircleAvatar(
-                child: Icon(Icons.person),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.person,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => frmPerfil(),
+                        ));
+                  },
+                ),
               ),
             ),
           ],

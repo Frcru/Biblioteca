@@ -8,19 +8,9 @@ class frmMtoUsuario extends StatefulWidget {
 class _frmMtoUsuarioState extends State<frmMtoUsuario> {
   final _formKey = GlobalKey<FormState>();
 
-  final _cantidadController = TextEditingController();
-
-  final _descripcionController = TextEditingController();
-
-  final _imagenController = TextEditingController();
-
-  final _nombreController = TextEditingController();
-
-  final _precioController = TextEditingController();
-
-  final _stockController = TextEditingController();
-
-  final _pesoController = TextEditingController();
+  final _codigo = TextEditingController();
+  final _tipo = TextEditingController();
+  final _logueo = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +21,7 @@ class _frmMtoUsuarioState extends State<frmMtoUsuario> {
         appBar: AppBar(
           leading: BackButton(color: Colors.black),
           title: Text(
-            'Mto Producto',
+            'Mto usuario',
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
@@ -52,8 +42,8 @@ class _frmMtoUsuarioState extends State<frmMtoUsuario> {
                           Container(
                             width: 250,
                             child: TextFormField(
-                              decoration: InputDecoration(labelText: 'Nombre'),
-                              controller: _nombreController,
+                              decoration: InputDecoration(labelText: 'Codigo'),
+                              controller: _codigo,
                               maxLength: 50,
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -82,8 +72,9 @@ class _frmMtoUsuarioState extends State<frmMtoUsuario> {
                         ],
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Descripción'),
-                        controller: _descripcionController,
+                        decoration:
+                            InputDecoration(labelText: 'Tipo de usuario'),
+                        controller: _tipo,
                         maxLength: 50,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -93,42 +84,10 @@ class _frmMtoUsuarioState extends State<frmMtoUsuario> {
                         },
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Imagen'),
-                        controller: _imagenController,
+                        decoration:
+                            InputDecoration(labelText: 'Usuario de login'),
+                        controller: _logueo,
                         maxLength: 150,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Precio'),
-                        controller: _precioController,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Stock'),
-                        controller: _stockController,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Por favor ingresar datos';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Peso'),
-                        controller: _pesoController,
-                        keyboardType: TextInputType.number,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Por favor ingresar datos';
