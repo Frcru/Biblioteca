@@ -2,7 +2,7 @@
 
 import 'package:biblioteca/application/widgets/input_decoration.dart';
 import 'package:flutter/material.dart';
-import 'package:biblioteca/infrastructure/controladores/c_login.dart';
+import 'package:biblioteca/controladores/c_login.dart';
 import 'package:provider/provider.dart';
 
 class frmLogin extends StatefulWidget {
@@ -144,53 +144,6 @@ class _frmLoginState extends State<frmLogin> {
                                         style: TextStyle(color: Colors.white),
                                       )),
                                   onPressed: null,
-                                  // onPressed: () async {
-                                  //   // conexionLog x = conexionLog();
-                                  //   // int b;
-                                  //   // Future<List> lo;
-                                  //   // lo = x.search(
-                                  //   //     'usuario', 'logeo', txtuser.text);
-                                  //   // List result = await lo;
-                                  //   // b = result.length;
-                                  //   // List passwords = await result
-                                  //   //     .where((item) =>
-                                  //   //         item.containsKey('password'))
-                                  //   //     .map((item) => item['password'])
-                                  //   //     .toList();
-                                  //   // List tipo = result
-                                  //   //     .where((item) =>
-                                  //   //         item.containsKey('tipousuario'))
-                                  //   //     .map((item) => item['tipousuario'])
-                                  //   //     .toList();
-                                  //   // if (txtpass.text == '' ||
-                                  //   //     txtuser.text == '') {
-                                  //   //   showDialog(
-                                  //   //     context: context,
-                                  //   //     builder: (BuildContext context) {
-                                  //   //       return AlertDialog(
-                                  //   //         title: Text(
-                                  //   //             'Ingrese password y usuario'),
-                                  //   //       );
-                                  //   //     },
-                                  //   //   );
-                                  //   // }
-                                  //   // if (passwords.contains(txtpass.text) &&
-                                  //   //     tipo.contains('admin')) {
-                                  //   //   // Navigator.push(
-                                  //   //   //     context,
-                                  //   //   //     MaterialPageRoute(
-                                  //   //   //         builder: (context) =>
-                                  //   //   //             frmMain_admin()));
-                                  //   // }
-                                  //   // if ((passwords.contains(txtpass.text) &&
-                                  //   //     tipo.contains('basico'))) {
-                                  //   //   Navigator.push(
-                                  //   //       context,
-                                  //   //       // MaterialPageRoute(
-                                  //   //       //     // builder: (context) =>
-                                  //   //       //     //     frmMain_usuario()));
-                                  //   }
-                                  // },
                                 ),
                                 SizedBox(
                                   width: 10,

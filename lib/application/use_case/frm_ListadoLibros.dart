@@ -1,17 +1,20 @@
-import 'dart:ffi';
 import 'dart:math';
 
+import 'package:biblioteca/application/use_case/frm_ArriendoLibro.dart';
+import 'package:biblioteca/application/use_case/frm_MtoLector.dart';
+import 'package:biblioteca/application/use_case/frm_MtoLibros.dart';
+import 'package:biblioteca/application/use_case/frm_MtoUsuario.dart';
 import 'package:biblioteca/application/widgets/data.dart';
 import 'package:flutter/material.dart';
 
-class BibliotecaFrm extends StatefulWidget {
-  const BibliotecaFrm({super.key});
+class frmListadoLibros extends StatefulWidget {
+  const frmListadoLibros({super.key});
 
   @override
-  State<BibliotecaFrm> createState() => _BibliotecaFrmState();
+  State<frmListadoLibros> createState() => _frmListadoLibrosState();
 }
 
-class _BibliotecaFrmState extends State<BibliotecaFrm> {
+class _frmListadoLibrosState extends State<frmListadoLibros> {
   final _controller = PageController();
   final _notifierScroll = ValueNotifier(0.0);
 
@@ -88,7 +91,13 @@ class _BibliotecaFrmState extends State<BibliotecaFrm> {
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => frmArriendoLibro(),
+                      ));
+                },
               ),
               ListTile(
                 title: Padding(
@@ -97,29 +106,70 @@ class _BibliotecaFrmState extends State<BibliotecaFrm> {
                     children: [Text('Catalogo'), Spacer(), Icon(Icons.book)],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => frmListadoLibros(),
+                      ));
+                },
               ),
               ListTile(
                 title: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
                     children: [
-                      Text('Agregados'),
+                      Text('Mto. Lector'),
                       Spacer(),
                       Icon(Icons.book_rounded)
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => frmMtoLector(),
+                      ));
+                },
               ),
               ListTile(
                 title: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    children: [Text('Estado'), Spacer(), Icon(Icons.money_off)],
+                    children: [
+                      Text('Mto. Libros'),
+                      Spacer(),
+                      Icon(Icons.money_off)
+                    ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => frmMtoLibros(),
+                      ));
+                },
+              ),
+              ListTile(
+                title: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Text('Mto. Usuario'),
+                      Spacer(),
+                      Icon(Icons.supervised_user_circle_rounded)
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => frmMtoUsuario(),
+                      ));
+                },
               ),
             ],
           ),
@@ -149,6 +199,18 @@ class _BibliotecaFrmState extends State<BibliotecaFrm> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Opacity(
+                              opacity: 1 - rotation,
+                              child: Center(
+                                child: Text(
+                                  'Disponible: ${book.stock} unidades',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color.fromARGB(255, 6, 5, 5),
+                                  ),
+                                ),
+                              ),
+                            ),
                             Center(
                                 child: Stack(
                               children: [

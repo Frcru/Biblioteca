@@ -1,4 +1,4 @@
-import 'package:biblioteca/application/use_case/frm_biblioteca.dart';
+import 'package:biblioteca/application/use_case/frm_ListadoLibros.dart';
 import 'package:biblioteca/infrastructure/controladores/conexion.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: BibliotecaFrm(),
+      home: frmListadoLibros(),
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.lightBlue[800],
