@@ -193,11 +193,17 @@ class _BibliotecaFrmState extends State<BibliotecaFrm> {
                                       fontSize: 30,
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
+                                  SizedBox(height: 20),
                                   Text(
                                     'Escritor por ${book.author}',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Text(
+                                    'Categoria: ${book.categoria}',
                                     style: TextStyle(
                                       fontSize: 20,
                                       color: Colors.grey,
