@@ -2,7 +2,7 @@
 
 import 'package:biblioteca/application/widgets/input_decoration.dart';
 import 'package:flutter/material.dart';
-import 'package:biblioteca/controladores/c_login.dart';
+import 'package:biblioteca/infrastructure/controladores/c_login.dart';
 import 'package:provider/provider.dart';
 
 class frmLogin extends StatefulWidget {

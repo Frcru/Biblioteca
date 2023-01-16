@@ -1,5 +1,5 @@
 import 'package:biblioteca/application/use_case/frm_biblioteca.dart';
-import 'package:biblioteca/controladores/conexion.dart';
+import 'package:biblioteca/infrastructure/controladores/conexion.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
