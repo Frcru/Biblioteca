@@ -1,3 +1,4 @@
+import 'package:biblioteca/application/use_case/frm_ListadoUsuarios.dart';
 import 'package:flutter/material.dart';
 
 class frmMtoUsuario extends StatefulWidget {
@@ -97,6 +98,21 @@ class _frmMtoUsuarioState extends State<frmMtoUsuario> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.red),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              frmListadoUsuarios()));
+                                },
+                                child: Text('Listar'),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.red),

@@ -6,8 +6,8 @@ class e_usuario {
   e_usuario() {
     ec = c_usuario();
   }
-  void selectE() {
-    ec.select();
+  Future<List?> selectE() {
+    return ec.select();
   }
 
   void insertE(String codigo, String cod_tipo, String login, String password) {

@@ -5,70 +5,48 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class c_usuario {
   //
-  Future select() async {
+  Future<List?> select() async {
     try {
-      PostgrestResponse? response = await SupabaseCredentials.supabaseClient
-          .from('usuarios')
-          .select()
-          .execute();
-      if (response.data != null) {
-        print(response.data);
-      } else {
-        print(response.status);
-      }
+      var response = await Supabase.instance.client.from('usuarios').select();
+      print('Response data $response');
+      final dataList = response as List;
+      return dataList;
     } catch (e) {
       print(e.toString());
     }
   }
 
-  Future insert(usuario usuario) async {
+  insert(usuario usuario) async {
     try {
-      PostgrestResponse? response =
-          await SupabaseCredentials.supabaseClient.from('usuarios').insert({
+      await Supabase.instance.client.from('usuarios').insert({
         'codigo': '${usuario.codigo}',
         'codigo_tipo_u': '${usuario.codigo_tipo}',
         'login': '${usuario.login}',
         'password': '${usuario.password}'
-      }).execute();
-      if (response.data != null) {
-        print(response.data);
-      } else {
-        print(response.status);
-      }
+      });
     } catch (e) {
       print(e.toString());
     }
   }
 
-  Future update(usuario usuario) async {
+  update(usuario usuario) async {
     try {
-      PostgrestResponse? response =
-          await SupabaseCredentials.supabaseClient.from('usuarios').update({
+      await SupabaseCredentials.supabaseClient.from('usuarios').update({
         'codigo_tipo_u': '${usuario.codigo_tipo}',
         'login': '${usuario.login}',
         'password': '${usuario.password}'
-      }).match({'codigo': '${usuario.codigo}'}).execute();
-      if (response.data != null) {
-        print(response.data);
-      } else {
-        print(response.status);
-      }
+      }).match({'codigo': '${usuario.codigo}'});
     } catch (e) {
       print(e.toString());
     }
   }
 
-  Future delete(usuario usuario) async {
+  delete(usuario usuario) async {
     try {
       PostgrestResponse? response = await SupabaseCredentials.supabaseClient
           .from('usuarios')
           .delete()
-          .match({'codigo': '${usuario.codigo}'}).execute();
-      if (response.data != null) {
-        print(response.data);
-      } else {
-        print(response.status);
-      }
+          .match({'codigo': '${usuario.codigo}'});
     } catch (e) {
       print(e.toString());
     }
