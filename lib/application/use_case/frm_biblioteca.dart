@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:math';
 
 import 'package:biblioteca/application/widgets/data.dart';
@@ -38,6 +39,14 @@ class _BibliotecaFrmState extends State<BibliotecaFrm> {
     final bookwidth = size.width * 0.5;
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          child: Icon(
+            Icons.shopify,
+            size: 60,
+          ),
+          onPressed: () {},
+          backgroundColor: Colors.red,
+        ),
         appBar: AppBar(
           title: Text('Libreria'),
           actions: [
@@ -123,41 +132,6 @@ class _BibliotecaFrmState extends State<BibliotecaFrm> {
                 fit: BoxFit.fill,
               ),
             ),
-            // SizedBox(
-            //   height: kToolbarHeight,
-            //   child: AppBar(
-            //     leading: Drawer(
-            //       child: ListView(
-            //         children: [
-            //           // DrawerHeader(child: Text('Menu opciones')),
-            //           ListTile(
-            //             title: Text('data'),
-            //             onTap: () {},
-            //           ),
-            //           ListTile(
-            //             title: Icon(Icons.verified_user),
-            //             onTap: () {},
-            //           ),
-            //           ListTile(
-            //             title: Icon(Icons.history),
-            //             onTap: () {},
-            //           ),
-            //           ListTile(
-            //             title: Icon(Icons.book),
-            //             onTap: () {},
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //     title: Text(
-            //       'Coleccion Libros',
-            //       style: TextStyle(color: Colors.black),
-            //     ),
-            //     centerTitle: true,
-            //     elevation: 0,
-            //     backgroundColor: Colors.white,
-            //   ),
-            // ),
             ValueListenableBuilder<double>(
                 valueListenable: _notifierScroll,
                 builder: (context, value, _) {
@@ -244,3 +218,39 @@ class _BibliotecaFrmState extends State<BibliotecaFrm> {
     );
   }
 }
+
+            // SizedBox(
+            //   height: kToolbarHeight,
+            //   child: AppBar(
+            //     leading: Drawer(
+            //       child: ListView(
+            //         children: [
+            //           // DrawerHeader(child: Text('Menu opciones')),
+            //           ListTile(
+            //             title: Text('data'),
+            //             onTap: () {},
+            //           ),
+            //           ListTile(
+            //             title: Icon(Icons.verified_user),
+            //             onTap: () {},
+            //           ),
+            //           ListTile(
+            //             title: Icon(Icons.history),
+            //             onTap: () {},
+            //           ),
+            //           ListTile(
+            //             title: Icon(Icons.book),
+            //             onTap: () {},
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //     title: Text(
+            //       'Coleccion Libros',
+            //       style: TextStyle(color: Colors.black),
+            //     ),
+            //     centerTitle: true,
+            //     elevation: 0,
+            //     backgroundColor: Colors.white,
+            //   ),
+            // ),
